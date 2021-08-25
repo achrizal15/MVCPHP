@@ -3,6 +3,9 @@ class Kasir extends Controller
 {
     public function index()
     {
+        if (!isset($_SESSION['login_key'])) {
+            header("Location:" . URLPUBLIC."/Authentikasi");
+        }
         $kasir = $this->models("Kasir_models");
         $tampilData = 5;
         $halamanAktif = 1;
@@ -18,7 +21,7 @@ class Kasir extends Controller
     {
         $kasir = $this->models("Kasir_models");
         if (isset($_POST['cari']) && $_POST['cari'] != "") {
-            $data['kasir'] = $kasir->cariKasir($_POST['cari'],0,5);
+            $data['kasir'] = $kasir->cariKasir($_POST['cari'], 0, 5);
             $data['jumlahHalaman'] = ceil(count($kasir->getAllKasir($_POST['cari'])) / 5);
             $data['keyword'] = $_POST['cari'];
             $data['halamanAktif'] = 1;

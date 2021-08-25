@@ -23,7 +23,9 @@
                     <td><?= $barang['br_nama']  ?></td>
                     <td><?= "Rp." . $barang['harga']  ?></td>
                     <td><?= $barang['gambar']  ?></td>
-                    <td>detail||EDIT||
+                    <td>
+                    <a href="<?= URLPUBLIC ?>/barang/selectSingle/<?= $barang['br_id'] ?>" class="detailBarang">Edit Data</a>
+                        <a href="" class="detailBarang" data-bs-toggle="modal" data-bs-target="#detailStatic" data-id="<?= $barang['br_id']  ?>">detail</a>
                         <a href="<?= URLPUBLIC ?>/barang/hapus/<?= $barang['br_id'] ?>/<?= $barang['gambar'] ?>">DELETE</a>
                     </td>
                 </tr>
@@ -31,7 +33,7 @@
         </tbody>
     </table>
 </div>
-<!-- Modal -->
+<!-- Modal TAMBAH DAN UBAH-->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -40,7 +42,6 @@
             </div>
             <form action="<?= URLPUBLIC; ?>/barang/tambah" method="post" enctype='multipart/form-data'>
                 <div class="modal-body">
-
                     <!-- email -->
                     <div class="form-floating mb-3 ">
                         <input type="text" class="form-control" name="nama" id="floatingInput" placeholder="Sampo">
@@ -62,6 +63,25 @@
                     <button type="submit" class="btn btn-primary" name="tambah">Tambah Data</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+<!-- MODAL DETAILLL -->
+<div class="modal fade" id="detailStatic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body mx-auto d-block">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/IMG256126100a982db.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">ACH RIZAL</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>

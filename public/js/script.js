@@ -1,5 +1,19 @@
 
 $(function () {
+    $(".detailBarang").on("click", function () {
+        const id = $(this).data('id');
+        $.ajax({
+            url: "http://localhost/MVCPHP/public/barang/detail",
+            data: { id: id },
+            method: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $(".card-body h5[class=card-title]").html(data.br_nama);
+                $(".card img").attr("src",'img/'+data.gambar)
+
+            }
+        })
+    })
     $('.tambahData').on('click', function () {
         $("#exampleModalLabel").html("Tambah Data")
         $(".modal-footer button[type=submit]").html('Tambah Data')

@@ -27,6 +27,7 @@
                             <a class="nav-link" aria-current="page" href="<?= URLPUBLIC; ?>/<?= $menu[$i];  ?>"> <?= $menu[$i];  ?></a>
                         <?php endif;  ?>
                     <?php endfor;  ?>
+                    <a class="nav-link" aria-current="page" href="<?= URLPUBLIC; ?>/Authentikasi/logout">Logout</a>
                 </div>
             </div>
         </div>
