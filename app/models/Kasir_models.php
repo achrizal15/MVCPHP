@@ -36,7 +36,7 @@ class Kasir_models
     public function tambahKasir($data)
     {
         if ($data['nama'] != "" && $data['email'] != "") {
-            $this->db->query("INSERT INTO kasir VALUES ('',:nama,:email)");
+            $this->db->query("INSERT INTO kasir VALUES (NULL,:nama,:email)");
             $this->db->bind("nama", $data['nama']);
             $this->db->bind("email", $data['email']);
             $this->db->execute();

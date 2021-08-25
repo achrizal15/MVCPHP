@@ -52,7 +52,7 @@ class Kasir extends Controller
     public function detail($id)
     {
         $data['kasir'] = $this->models("Kasir_models")->getKasirById($id);
-        $this->views("kasir/detail", $data, "KASIR {$data['kasir']['nama']}");
+        $this->views("kasir/detail", $data, "Kasir {$data['kasir']['nama']}");
     }
     public function tambah()
     {

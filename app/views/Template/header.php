@@ -11,18 +11,23 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand"href="<?= URLPUBLIC ?>">SRIWANGI</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="<?= URLPUBLIC ?>">Home</a>
-                <a class="nav-link" href="<?= URLPUBLIC ?>/kasir">Kasir</a>
-                <a class="nav-link" href="<?= URLPUBLIC ?>/barang">Barang</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="<?= URLPUBLIC ?>">SRIWANGI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <?php for ($i = 0; $i < count($menu); $i++) : ?>
+                        <?php $jdl = explode(" ", $title);
+                        if (in_array($menu[$i], $jdl)) : ?>
+                            <a class="nav-link active" aria-current="page" href="<?= URLPUBLIC; ?>/<?= $menu[$i];  ?>"> <?= $menu[$i];  ?></a>
+                        <?php else :  ?>
+                            <a class="nav-link" aria-current="page" href="<?= URLPUBLIC; ?>/<?= $menu[$i];  ?>"> <?= $menu[$i];  ?></a>
+                        <?php endif;  ?>
+                    <?php endfor;  ?>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>

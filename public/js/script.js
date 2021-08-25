@@ -1,3 +1,4 @@
+
 $(function () {
     $('.tambahData').on('click', function () {
         $("#exampleModalLabel").html("Tambah Data")
@@ -21,4 +22,4 @@ $(function () {
             }
         })
     });
-})
+});

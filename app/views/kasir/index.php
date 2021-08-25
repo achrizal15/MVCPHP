@@ -18,7 +18,6 @@
                 <?php $i = 1;
                 foreach ($data['kasir'] as $kasir) : ?>
                     <li width="20" class="list-group-item d-flex justify-content-between align-items-start"> <?= $kasir['nama']; ?>
-
                         <div>
                             <!-- DETAIL -->
                             <a class="btn btn-primary rounded-pill btn-sm" style="font-size: 12px;" href="<?= URLPUBLIC; ?>/kasir/detail/<?= $kasir['id'] ?>">Detail</a>
